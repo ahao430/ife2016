@@ -1,0 +1,198 @@
+ /*reset */
+body,h1,h2,h3,ol,ul,dl,dt,dd,li,table,header,footer,section,input,select,a,img,textarea{
+	margin:0;padding:0;font-size: 13px;font-family: "Microsoft Yahei","微软雅黑";
+	line-height: 2;font-weight: bold;outline: none;
+}
+ul,ol{
+	list-style: none;
+}
+/* common */
+.clearfix{
+	*zoon:1;
+}
+.clearfix:after{
+	content:"";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height:0;
+}
+.fl{float: left;}
+.fr{float: right;}
+h2{font-size: 20px;font-weight: bold;}
+h3{font-size: 18px;font-wight:bold;color:#676767;}
+p{text-indent: 2em;font-weight: bold;}
+.article_info{font-size: 10px;color:#676767;line-height: 1;text-indent: 0;}
+p a:hover{color:#f00;}
+/* layout */
+body{
+	background: #dedede;
+
+}
+.main{
+	margin-right: 430px;
+}
+header{
+	background: #333;
+	height:60px;
+	padding: 20px;
+	line-height: 20px;
+}
+section,.aside{
+	margin: 20px;
+	padding: 20px;
+	background: #fff;
+	border:1px solid #cdcdcd;
+	box-shadow: 2px 2px #848484;
+}
+.aside{
+	position: absolute;
+	top:60px;
+	right:0;
+	width:364px;
+	
+}
+/* nav */
+header{
+	background-image: url('images/baidu_logo.jpg');
+	background-repeat:  no-repeat ;
+	background-position:  37px 8px;
+	box-sizing: border-box;
+}
+nav li {
+	float:left;
+}
+nav li span{
+	display: inline-block;
+	width:5px;
+	height:5px;
+	border-radius: 50%;
+	background: #060606;
+}
+nav li a{
+	text-decoration: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 12px;
+}
+nav li a:link,nav li a:visited{
+	color:#fff;
+}
+nav li a:hover,nav li a:active{
+	color:#A9AEB4;
+}
+/* section */
+.items{
+	padding-left:20px;
+}
+.pics dl,dt,dd{
+	display: inline-block;
+}
+.pics dl{
+	border:1px solid #cfcfcf;
+	max-width:118px;
+	text-align: center;
+	margin:10px;
+	box-sizing: border-box;
+}
+.pics dt,.pics dd{
+	margin: 3px 10px;
+}
+section img{
+	width:100%;
+	height:100%;
+	max-width: 300px;
+	max-height: 240px;
+}
+.pics dd img{
+	width: 100%;
+	height: 100%;
+
+}
+.rank{
+	list-style:decimal; 
+	padding-left: 60px;
+}
+table{
+	width:100%;
+	border-collapse: collapse;
+	border:#ccc;
+}
+table th{
+	background: #333;
+	color: #fff;
+	text-align: left;
+}
+table tfoot{
+	background: #ccc;
+}
+table th,td{
+	padding-left: 5px;
+}
+/* aside */
+.aside h2{
+	font-size: 16px;
+	border-left: 3px solid #ccc;
+	padding-left: 20px;
+	
+}
+/* form */
+form p{
+	padding-left: 120px;
+}
+form p span{
+	position: absolute;
+	display: inline:block;
+	width:150px;
+	text-align: right;
+	margin-left: -180px;
+}
+form .tip{
+	color:#adadad;
+}
+.radio label,.radio label:after{
+	display: inline-block;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+}
+.radio label{
+	border:1px solid #d1d1d1;
+	background: #fff;
+	width: 12px;
+	height: 12px;
+	margin-left: -30px;
+	margin-top: 5px;
+}
+.radio input:checked+label{
+	background: #319bff;
+}
+.radio label:after{
+	content:"";
+	background-color:#fff;
+	width: 6px;
+	height: 6px;
+	margin-left: -23px;
+	margin-top: 3px;
+}
+form select{
+	border-radius: 5px;
+}
+.submit_btn{
+	display: block;
+	width:100%;
+	font-size: 18px;
+	color:#fff;
+	background: #3355d0;
+	border-radius: 10px;
+	font-weight: normal;
+}
+/* footer */
+footer{
+	text-align: center;
+	background: #000;
+	color:#fff;
+	height: 70px;
+	padding-top: 10px;
+	font-size: 10px;
+}

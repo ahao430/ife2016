@@ -1,0 +1,51 @@
+/* 变量 */
+@w:100%/12;
+/* reset */
+body,div{margin:0;padding: 0;outline:none;}
+/* 布局 */
+.container{
+	width: 100%;
+}
+.row{
+	*zoom:1;
+	overflow: hidden;
+	width: 100%;
+	padding:0 10px;
+	box-sizing: border-box;
+}
+div[class*="col"]{
+	background: #eee;
+	margin:10px;
+	height: 50px;
+	border:1px solid #999;
+	float:left;
+	box-sizing: border-box;
+}
+@media(min-width:769px){
+	.col-bg-1{width: ~"calc("@w~"- 20px)";}
+	.col-bg-2{width: ~"calc("@w*2~"- 20px)";}
+	.col-bg-3{width: ~"calc("@w*3~"- 20px)";}
+	.col-bg-4{width: ~"calc("@w*4~"- 20px)";}
+	.col-bg-5{width: ~"calc("@w*5~"- 20px)";}
+	.col-bg-6{width: ~"calc("@w*6~"- 20px)";}
+	.col-bg-7{width: ~"calc("@w*7~"- 20px)";}
+	.col-bg-8{width: ~"calc("@w*8~"- 20px)";}
+	.col-bg-9{width: ~"calc("@w*9~"- 20px)";}
+	.col-bg-10{width:~"calc("@w*10~"- 20px)";}
+	.col-bg-11{width:~"calc("@w*11~"- 20px)";}
+	.col-bg-12{width:~"calc("@w*12~"- 20px)";}
+}
+@media(max-width:768px){
+	.col-sm-1{width: ~"calc("@w~"- 20px)";}
+	.col-sm-2{width: ~"calc("@w*2~"- 20px)";}
+	.col-sm-3{width: ~"calc("@w*3~"- 20px)";}
+	.col-sm-4{width: ~"calc("@w*4~"- 20px)";}
+	.col-sm-5{width: ~"calc("@w*5~"- 20px)";}
+	.col-sm-6{width: ~"calc("@w*6~"- 20px)";}
+	.col-sm-7{width: ~"calc("@w*7~"- 20px)";}
+	.col-sm-8{width: ~"calc("@w*8~"- 20px)";}
+	.col-sm-9{width: ~"calc("@w*9~"- 20px)";}
+	.col-sm-10{width:~"calc("@w*10~"- 20px)";}
+	.col-sm-11{width:~"calc("@w*11~"- 20px)";}
+	.col-sm-12{width:~"calc("@w*12~"- 20px)";}
+}
