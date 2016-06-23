@@ -1,0 +1,759 @@
+/* 变量 */
+/* reset */
+body,
+header,
+main,
+div,
+p,
+span,
+a,
+form,
+ul,
+li,
+input,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* public */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+/* header main */
+header {
+  width: 100%;
+  height: 57px;
+  background-color: #388ac1;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header nav {
+  width: 1280px;
+  height: 57px;
+  margin: 0 auto;
+}
+header .block {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  margin-top: 10px;
+  margin-left: 45px;
+}
+header .block span {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-top: 4px solid #388ac1;
+  border-left: 4px solid #388ac1;
+  top: 18px;
+  left: 18px;
+}
+header .search {
+  width: 263px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 14px;
+  margin-top: 14px;
+  background: #ffffff url(images/search.png) no-repeat 9px center;
+  padding: 0 14px 0 36px;
+}
+header .login {
+  background: url(images/login.png) no-repeat left center;
+  color: #fff;
+  cursor: pointer;
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-right: 70px;
+}
+header input {
+  border: none;
+}
+main {
+  width: 1280px;
+  margin: 0 auto;
+  margin-top: 57px;
+  padding-left: 260px;
+  box-sizing: border-box;
+}
+/* sidebar */
+.sidebar {
+  width: 260px;
+  position: fixed;
+  top: 57px;
+  bottom: 0;
+  margin-left: -260px;
+  background-color: #2a2e3d;
+  color: #6e8096;
+  box-sizing: border-box;
+}
+.sidebar a {
+  color: #6e8096;
+}
+.sidebar .active > a,
+.sidebar li:hover > a {
+  color: #ededf0;
+}
+.sidebar > ul > .active {
+  background-color: #393d4e;
+}
+.sidebar .sidebar-name {
+  margin-top: 18px;
+  margin-bottom: 24px;
+  padding-left: 45px;
+}
+.sidebar .sidebar-name a {
+  font: 16px "黑体";
+  display: block;
+  height: 57px;
+  line-height: 57px;
+  margin-left: 17px;
+}
+.sidebar .circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #bababa;
+}
+.sidebar .circle span {
+  display: block;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background-color: #bababa;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+.sidebar .sidebar-count {
+  padding-left: 45px;
+}
+.sidebar .count-num {
+  padding: 0 45px 19px 15px;
+}
+.sidebar .count-num p:first-of-type {
+  font: 16px "黑体";
+}
+.sidebar .count-num p:last-of-type {
+  font: 12px "宋体";
+}
+.sidebar-dir > li {
+  text-indent: 65px;
+}
+.sidebar-dir > li a {
+  padding: 9px 0;
+}
+.sidebar-dir > li li {
+  text-indent: 100px;
+}
+.sidebar-dir > li li a {
+  padding: 4px 0;
+}
+.sidebar-dir > li li li {
+  text-indent: 115px;
+}
+.sidebar-dir a {
+  font: 12px "黑体";
+  display: block;
+}
+.sidebar-dir a:hover {
+  background-color: #666;
+  color: #6e8096;
+}
+.sidebar-dir .report-form {
+  background: url(images/folder.png) no-repeat 45px center;
+}
+.sidebar-dir .files > li {
+  background: url(images/folder.png) no-repeat 80px 5px;
+}
+.sidebar-dir .files > li a span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  margin-left: -40px;
+  background: url(images/right.png) no-repeat center center;
+}
+.sidebar-dir .files > li.active a span {
+  background-image: url(images/down.png);
+}
+.sidebar-dir .files > li.active li {
+  background: url(images/document.png) no-repeat 100px 5px;
+}
+.sidebar-dir .collection,
+.sidebar-dir .gallery,
+.sidebar-dir .record {
+  background: url(images/collection.png) no-repeat 45px center;
+}
+.sidebar-dir .share {
+  background: url(images/share.png) no-repeat 45px center;
+}
+.sidebar-dir .account-info {
+  background: url(images/account.png) no-repeat 45px center;
+}
+/* .content */
+.content {
+  background-color: #eeedec;
+}
+.content a:link,
+.content a:visited {
+  color: #a9a9a9;
+}
+.content a:hover,
+.content a:active,
+.content .active a {
+  color: #388ac1;
+}
+.header {
+  height: 31px;
+  background: #fff;
+  position: fixed;
+  z-index: 3;
+  width: 1020px;
+}
+.header ul {
+  padding-left: 20px;
+}
+.header li {
+  float: left;
+  height: 31px;
+  line-height: 31px;
+  font: 12px "黑体";
+}
+.header li a {
+  display: inline-block;
+  height: 31px;
+  line-height: 31px;
+  padding: 0 5px;
+}
+.header li + li:before {
+  content: "/";
+  display: inline-block;
+  padding: 0 5px;
+}
+.main {
+  padding: 51px 70px 156px 60px;
+}
+.row {
+  margin: 10px 0;
+  width: 891px;
+}
+.box {
+  background: #fff;
+  float: left;
+  border: 1px solid #cbcbcb;
+  box-sizing: border-box;
+}
+.row1 {
+  background: #fff;
+}
+.row1 .box {
+  border: none;
+  padding-top: 15px;
+  padding-left: 30px;
+  height: 86px;
+}
+.row1 .box span,
+.row1 .box input {
+  height: 26px;
+  line-height: 26px;
+}
+.row1 .box p {
+  margin-bottom: 5px;
+}
+.row1 .box span {
+  font: 12px "黑体";
+  color: #a9a9a9;
+}
+.row1 .box input {
+  font: 12px "黑体";
+  color: #656565;
+  text-indent: 1em;
+  border: 1px solid #a9a9a9;
+}
+.row1 .box .long {
+  width: 120px;
+}
+.row1 .box .short {
+  width: 70px;
+}
+.row1 .box .btn {
+  background: #388ac1;
+  color: #fff;
+  text-indent: 0;
+  text-align: center;
+  width: 50px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.row1 .box1 {
+  width: 160px;
+}
+.row1 .box2 {
+  width: 217px;
+  background: url(images/change.png) no-repeat right center;
+}
+.row1 .box3 {
+  width: 324px;
+}
+.row1 .box4 {
+  width: 160px;
+}
+.row1 .long {
+  background: url(images/down.png) no-repeat 105px center;
+}
+.row1 .short {
+  background: url(images/down.png) no-repeat 55px center;
+}
+.row2 .box {
+  border-top: 1px solid #a9a9a9;
+  border-left: 1px solid #a9a9a9;
+  height: 65px;
+}
+.row2 .active,
+.row2 .box:hover {
+  border-top: 4px solid #388ac1;
+}
+.row2 .box1,
+.row2 .box8 {
+  width: 31px;
+  margin-right: 4px;
+  line-height: 65px;
+  text-align: center;
+  font-weight: bold;
+}
+.row2 .box1 a,
+.row2 .box8 a {
+  widows: 31px;
+  height: 65px;
+  display: block;
+}
+.row2 .box2,
+.row2 .box3,
+.row2 .box4,
+.row2 .box5,
+.row2 .box6,
+.row2 .box7 {
+  width: 111px;
+  margin-right: 4px;
+  padding-top: 12px;
+  padding-left: 22px;
+}
+.row2 .box2 a,
+.row2 .box3 a,
+.row2 .box4 a,
+.row2 .box5 a,
+.row2 .box6 a,
+.row2 .box7 a {
+  display: block;
+  width: 111px;
+  height: 65px;
+}
+.row2 .box2 p:first-of-type,
+.row2 .box3 p:first-of-type,
+.row2 .box4 p:first-of-type,
+.row2 .box5 p:first-of-type,
+.row2 .box6 p:first-of-type,
+.row2 .box7 p:first-of-type {
+  font: 12px "微软雅黑";
+  color: #656565;
+}
+.row2 .box2 p:last-of-type,
+.row2 .box3 p:last-of-type,
+.row2 .box4 p:last-of-type,
+.row2 .box5 p:last-of-type,
+.row2 .box6 p:last-of-type,
+.row2 .box7 p:last-of-type {
+  font: 21px "微软雅黑";
+  color: #EB6400;
+}
+.row2 .box9 {
+  width: 131px;
+  margin-right: 0;
+  padding-top: 26px;
+  font: 12px "微软雅黑";
+  color: #000;
+  background: #ffffff url(images/calendar.png) 15px center no-repeat;
+}
+.row2 .box9 a {
+  display: block;
+  width: 131px;
+  height: 65px;
+  text-indent: 60px;
+}
+.row3 {
+  margin-top: 20px;
+}
+.row3 h4 {
+  font: 12px "微软雅黑";
+  margin-bottom: 3px;
+}
+.row3 .box {
+  width: 201px;
+  height: 71px;
+}
+.row3 .box + .box {
+  margin-left: 29px;
+}
+.row3 .box .left {
+  font: 12px "黑体";
+  padding-left: 8px;
+  padding-top: 19px;
+}
+.row3 .box .left p:first-of-type {
+  color: #656565;
+  margin-bottom: 10px;
+}
+.row3 .box .left p:last-of-type {
+  color: #a9a9a9;
+}
+.row3 .box .right {
+  margin: 14px;
+  height: 47px;
+  width: 61px;
+}
+.row3 .box1 {
+  border-left: 4px solid #43b29e;
+}
+.row3 .box1 .right {
+  background: #43b29e;
+}
+.row3 .box2 {
+  border-left: 4px solid #388ac1;
+}
+.row3 .box2 .right {
+  background: #388ac1;
+}
+.row3 .box3 {
+  border-left: 4px solid #d04a36;
+}
+.row3 .box3 .right {
+  background: #d04a36;
+}
+.row3 .box4 {
+  border-left: 4px solid #e2cd47;
+}
+.row3 .box4 .right {
+  background: #e2cd47;
+}
+.panel {
+  border-radius: 10px;
+  height: 357px;
+}
+.panel-header {
+  height: 41px;
+  background-color: #F4F5F6;
+  line-height: 41px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+.panel-content {
+  height: 316px;
+}
+.row4 .panel1 {
+  width: 531px;
+  margin-right: 9px;
+}
+.row4 .panel1 .panel-content {
+  padding: 12px 20px 58px;
+}
+.row4 .panel2 {
+  width: 351px;
+}
+.row4 .tabs {
+  position: relative;
+  z-index: 2;
+}
+.row4 .tabs li {
+  float: left;
+  width: 85px;
+  height: 27px;
+  text-align: center;
+  margin-right: 4px;
+  background-color: #eeedec;
+  border-radius: 5px 5px 0 0;
+}
+.row4 .tabs li a {
+  display: block;
+  font: 12px "微软雅黑";
+  width: 85px;
+  height: 27px;
+  line-height: 27px;
+  color: #656565;
+}
+.row4 .tabs li.active,
+.row4 .tabs li:hover {
+  background-color: #fff;
+  border: 1px solid #cbcbcb;
+  border-bottom: none;
+}
+.row4 .tab-contents {
+  position: relative;
+  width: 489px;
+  height: 252px;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  margin-top: -1px;
+}
+.row4 .tab-contents li {
+  position: absolute;
+  z-index: -1;
+  padding-top: 29px;
+  padding-left: 36px;
+  background: #fff;
+}
+.row4 .tab-contents li.active {
+  z-index: 1;
+}
+.row4 .tab-contents li table {
+  border-collapse: collapse;
+  border: none;
+  font: 12px "宋体";
+}
+.row4 .tab-contents li table td {
+  border: 1px solid #cbcbcb;
+  width: 100px;
+  height: 29px;
+  line-height: 29px;
+  text-align: center;
+  cursor: pointer;
+}
+.row4 .tab-contents li table td:hover {
+  background: #eeedec;
+}
+.row4 #tab1:target {
+  z-index: 1;
+}
+.row4 #tab2:target {
+  z-index: 1;
+}
+.row4 #tab2:target #tab2 {
+  background: #fff;
+}
+.row4 #tab3:target {
+  z-index: 1;
+}
+.row4 #tab4:target {
+  z-index: 1;
+}
+.row4 #tab5:target {
+  z-index: 1;
+}
+.row4 .panel2 .panel-content {
+  padding: 14px 35px 38px;
+}
+.row4 .panel2 .panel-content .item {
+  float: left;
+  font: 12px "微软雅黑";
+  text-indent: 15px;
+}
+.row4 .panel2 .panel-content .item h4 {
+  color: #a9a9a9;
+  line-height: 20px;
+}
+.row4 .panel2 .panel-content .item p {
+  color: #656565;
+  line-height: 23px;
+}
+.row4 .panel2 .panel-content .item-box1 {
+  height: 43px;
+  width: 279px;
+  border-bottom: 1px solid #cbcbcb;
+}
+.row4 .panel2 .panel-content .item-box2 {
+  height: 43px;
+  width: 90px;
+  display: inline-block;
+  border-bottom: 1px solid #cbcbcb;
+  border-right: 1px solid #cbcbcb;
+}
+.row4 .panel2 .panel-content .item-box3 {
+  height: 43px;
+  width: 188px;
+  display: inline-block;
+  border-bottom: 1px solid #cbcbcb;
+}
+.row4 .panel2 .panel-content .item-box4 {
+  height: 146px;
+  width: 279px;
+  border-bottom: 1px solid #cbcbcb;
+}
+.row4 .panel2 .panel-content .item-box5 {
+  width: 279px;
+  text-indent: 5px;
+  padding-top: 5px;
+  height: 26px;
+  line-height: 26px;
+  color: #a9a9a9;
+}
+.row4 .panel2 .panel-content .item-box5 .item-check {
+  margin-top: 8px;
+}
+.row4 .panel2 .panel-content .item-box5 .item-btn {
+  display: block;
+  width: 51px;
+  height: 26px;
+  line-height: 26px;
+  background: #388ac1;
+  color: #fff;
+  cursor: pointer;
+}
+.row5 .panel1 {
+  width: 351px;
+  margin-right: 9px;
+  font: 12p "黑体";
+}
+.row5 .panel1 .panel-content {
+  padding: 0 20px;
+}
+.row5 .panel1 .panel-content .date input {
+  border: 1px solid #cbcbcb;
+  float: left;
+  margin: 10px 3px;
+  height: 21px;
+  text-indent: 5px;
+  cursor: pointer;
+}
+.row5 .panel1 .panel-content .date input:first-of-type {
+  width: 62px;
+  background: url(images/down2.png) no-repeat 52px center;
+}
+.row5 .panel1 .panel-content .date input:nth-of-type(2) {
+  width: 80px;
+  text-indent: 20px;
+  background: url(images/down2.png) no-repeat 50px center;
+}
+.row5 .panel1 .panel-content .date input:nth-of-type(3) {
+  width: 73px;
+  background: url(images/down2.png) no-repeat 62px center;
+}
+.row5 .panel1 .panel-content .date input:last-of-type {
+  width: 62px;
+}
+.row5 .panel1 .panel-content table {
+  width: 309px;
+  border-collapse: collapse;
+}
+.row5 .panel1 .panel-content table thead tr {
+  border-top: 2px solid #388ac1;
+  border-bottom: 2px solid #eeedec;
+  height: 30px;
+}
+.row5 .panel1 .panel-content table tbody tr {
+  height: 44px;
+  text-align: center;
+}
+.row5 .panel1 .panel-content table tbody tr p.holiday {
+  color: #d04a36;
+}
+.row5 .panel1 .panel-content table tbody tr td:nth-of-type(6) > p:first-of-type {
+  color: #d04a36;
+}
+.row5 .panel1 .panel-content table tbody tr td:nth-of-type(7) > p:first-of-type {
+  color: #d04a36;
+}
+.row5 .panel2 {
+  width: 531px;
+}
+.row5 .panel2 .panel-content {
+  margin: 17px 40px 23px;
+  overflow: hidden;
+  height: 276px;
+}
+.row5 .panel2 .panel-content table {
+  border-collapse: collapse;
+  width: 447px;
+}
+.row5 .panel2 .panel-content table th,
+.row5 .panel2 .panel-content table td {
+  border: 1px solid #cbcbcb;
+  height: 23px;
+  text-align: center;
+}
+.row5 .panel2 .panel-content table tr td:first-of-type {
+  width: 65px;
+}
+.row5 .panel2 .panel-content table tr td:nth-of-type(2) {
+  width: 90px;
+}
+.row5 .panel2 .panel-content table tr span {
+  display: inline-block;
+  width: 166px;
+  height: 4px;
+  background: #cbcbcb;
+  position: relative;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.row5 .panel2 .panel-content table tr i {
+  display: inline-block;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  background: #388ac1;
+}
+.row5 .panel2 .panel-content table tbody tr:hover {
+  background: #eeedec;
+  cursor: pointer;
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(1) i {
+  width: calc(135.32320277px);
+  background: #d04a36;
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(2) i {
+  width: calc(81.0836213px);
+  background: #d04a36;
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(3) i {
+  width: calc(64.01809367px);
+  background: #F19E4F;
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(4) i {
+  width: calc(63.31672707px);
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(5) i {
+  width: calc(61.76525787px);
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(6) i {
+  width: calc(59.32861303px);
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(7) i {
+  width: calc(55.65141423px);
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(8) i {
+  width: calc(53.26298133px);
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(9) i {
+  width: calc(53.04484903px);
+}
+.row5 .panel2 .panel-content table tbody tr:nth-of-type(10) i {
+  width: calc(51.30514137px);
+}
