@@ -1,6 +1,7 @@
 # ife2016
 百度前端技术学院2016练习  
-任务列表(http://ife.baidu.com/task/all)
+任务列表(http://ife.baidu.com/task/all)  
+完成demo(ahao430.github.io/ife2016/taskxx)
 ##第一阶段  
 任务1~12：了解、认识、学习、掌握HTML及CSS。
 ##第二阶段  
