@@ -1,0 +1,144 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+/* main */
+.wrapper {
+  width: 825px;
+  margin: 0 auto;
+}
+table {
+  margin: 56px auto;
+  width: 215px;
+  height: 220px;
+  border: 1px solid #fff;
+}
+table thead th {
+  background-color: #000;
+  color: #fff;
+}
+table tbody tr:nth-of-type(2n+1) {
+  background: #fff;
+}
+table tbody tr:nth-of-type(2n) {
+  background: #ccc;
+}
+table tbody tr:nth-of-type(-n+3) {
+  color: #f00;
+}
+input {
+  display: block;
+  margin: 0 auto;
+  width: 99px;
+  height: 20px;
+  box-sizing: border-box;
+  transition: all 1s ease-in-out;
+}
+input:focus {
+  width: 200px;
+  border: 1px solid #8EBCEE;
+  box-shadow: 0 0 3px #8EBCEE;
+}
+.banner {
+  position: relative;
+  width: 271px;
+  height: 109px;
+  margin: 76px auto;
+  overflow: hidden;
+}
+.banner .pic {
+  position: absolute;
+  width: 271px;
+  height: 109px;
+  top: 0;
+  left: 0;
+}
+.banner .pic:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 271px;
+  height: 109px;
+  top: 0;
+  left: -100%;
+}
+.banner .pic:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 271px;
+  height: 109px;
+  top: 0;
+  left: 100%;
+}
+.banner #pic1 {
+  background-color: #f00;
+}
+.banner #pic1:before {
+  background-color: #00f;
+}
+.banner #pic1:after {
+  background-color: #0f0;
+}
+.banner #pic2 {
+  background-color: #0f0;
+}
+.banner #pic2:before {
+  background-color: #f00;
+}
+.banner #pic2:after {
+  background-color: #00f;
+}
+.banner #pic3 {
+  background-color: #00f;
+}
+.banner #pic3:before {
+  background-color: #0f0;
+}
+.banner #pic3:after {
+  background-color: #f00;
+}
+.banner #list {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  width: 90px;
+  height: 28px;
+  overflow: hidden;
+}
+.banner #list li {
+  float: left;
+  width: 28px;
+  height: 28px;
+  margin-left: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  line-height: 28px;
+}
+.banner #list li a {
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+.banner #list li {
+  left: -100%;
+}
+.banner #pic1:target,
+.banner #pic2:target,
+.banner #pic3:target {
+  z-index: 1;
+  transform: translateX(-100%);
+  transition: all 1s linear;
+}
