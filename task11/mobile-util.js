@@ -60,7 +60,7 @@ window.mobileUtil = (function(win, doc) {
                     if (width / dpr > maxwidth) {
                         width = maxwidth * dpr;
                     }
-                    var rem = width / 50;
+                    var rem = width / 16;
                     docEl.style.fontSize = rem + 'px';
                 };
 
