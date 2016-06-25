@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务十：Flexbox 布局练习</title>
+	<style type="text/css">
+		.container{
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: center;
+			/*align-content: flex-start;*/
+			padding: 20px;
+		}
+		.item{
+			width: 150px;border:1px solid #f00;box-sizing: border-box;margin-bottom: 20px;
+		}
+		.container div:nth-child(1){height: 120px;}
+		.container div:nth-child(2){height: 100px;}
+		.container div:nth-child(3){height: 40px;}
+		.container div:nth-child(4){height: 200px;border:1px solid #0f0;}
+		@media screen and (max-width:640px){
+			.container{align-items: flex-start;}
+			.container div:nth-child(4){order:-1;}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</body>
+</html>
