@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>任务十七：零基础JavaScript编码（五）</title>
     <style>
-      .aqi-chart-wrap {
+      .aqi-chart-wrap{
       display: flex;
       width: 90%;
       height: 470px;
@@ -15,11 +15,18 @@
       padding: 5px;
       border: 2px solid #000;
     }
-    .aqi-chart-wrap div {
-      border: 1px solid #000;
-      box-sizing: border-box;
-      margin:0 2px;
+    .aqi-chart-wrap div{
       flex: 1;
+    }
+    @media screen and (min-width:600px) {
+      .aqi-chart-wrap div{border: 1px solid #000;
+      box-sizing: border-box;
+      margin:0 1px;}
+    }
+    @media screen and (min-width:800px) {
+      .aqi-chart-wrap div{border: 1px solid #000;
+      box-sizing: border-box;
+      margin:0 2px;}
     }
     </style>
     <script src="task.js"></script>
