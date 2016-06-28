@@ -18,6 +18,7 @@
 		<button id='lo'>左侧出</button>
 		<button id='ro'>右侧出</button>
 		<button id='generate'>随机生成一组数</button>
+		<input type="text" id="delaytime" value="50">间隔
 		<button id='sort'>排序</button>
 	</div>
 	<div id="box"></div>
@@ -29,12 +30,20 @@
 		lo	 =document.getElementById('lo'),
 		ro	 =document.getElementById('ro'),
 		sort =document.getElementById('sort'),
+		delaytime =document.getElementById('delaytime'),
 		box  =document.getElementById('box');
 	input.onblur=function(){
 		if(input.value.trim().match(/^[1-9][0-9]$/)){
 			input.value=input.value.trim();
 		}else{
 			alert('请输入10-100之间的整数');
+		}
+	};
+	delaytime.onblur=function(){
+		if(delaytime.value.trim().match(/^[0-9]+$/)){
+			delaytime.value=delaytime.value.trim();
+		}else{
+			alert('请输入自然数');
 		}
 	};
 	li.onclick=function(){
@@ -97,12 +106,15 @@
 	/*排序*/
 
 	function bubble(a){
-		var l=a.length,i,j=0,delay=50,timer=null;
+		var l=a.length,i,j=0,delay=delaytime.value,timer=null;
 		i=l-1;
 		timer=setInterval(function(){
+			box.children[j].style.backgroundColor='red';
 			if(i<1){
 				clearInterval(timer);
+				sort.disabled="";
 				box.children[i].style.backgroundColor='green';
+				box.children[i+1].style.backgroundColor='green';
 			}
 			if(j==i){
 				box.children[i].style.backgroundColor='green';
@@ -110,7 +122,7 @@
 				j=0;
 
 			}
-			box.children[j].style.backgroundColor='red';
+			
 			if(a[j]>a[j+1]){
 				temp=a[j];
 				a[j]=a[j+1];
@@ -138,7 +150,7 @@
 		console.log(arr);
 		this.disabled="disabled";
 		bubble(arr);
-		this.disabled='';
+		// this.disabled='';
 		console.log(arr);
 	};
 	
