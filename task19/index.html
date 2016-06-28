@@ -41,6 +41,7 @@
 		if(box.children.length<=60){
 			var obj=document.createElement('div');
 			obj.value=input.value;
+			obj.title=input.value;
 			obj.style.height=input.value+'px';
 			box.insertBefore(obj,box.children[0]);
 		}else{
@@ -51,6 +52,7 @@
 		if(box.children.length<=60){
 			var obj=document.createElement('div');
 			obj.value=input.value;
+			obj.title=input.value;
 			obj.style.height=input.value+'px';
 			box.appendChild(obj);
 		}else{
@@ -82,6 +84,7 @@
 				var obj=document.createElement('div');
 				var num=Math.floor(Math.random()*90)+10;
 				obj.value=num;
+				obj.title=num;
 				obj.style.height=num+'px';
 				box.appendChild(obj);
 			}else{
@@ -91,10 +94,52 @@
 			}
 		}
 	};
-		
 	/*排序*/
-	sort.onclick=function(){
 
-	}
+	function bubble(a){
+		var l=a.length,i,j=0,delay=50,timer=null;
+		i=l-1;
+		timer=setInterval(function(){
+			if(i<1){
+				clearInterval(timer);
+			}
+			if(j==i){
+				box.children[i].style.backgroundColor='green';
+				--i;
+				j=0;
+
+			}
+			box.children[j].style.backgroundColor='red';
+			if(a[j]>a[j+1]){
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+				box.children[j].style.backgroundColor='green';
+				box.children[j].value=a[j];
+				box.children[j].title=a[j];
+				box.children[j].style.height=a[j]+'px';
+				box.children[j+1].value=a[j+1];
+				box.children[j+1].title=a[j+1];
+				box.children[j+1].style.height=a[j+1]+'px';
+				box.children[j].style.backgroundColor='red';
+				box.children[j+1].style.backgroundColor='green';
+			}
+			++j;
+		},delay);
+	};
+	var arr=[];
+	sort.onclick=function(){
+		arr=[];
+		var l=box.children.length;
+		for(var i=0;i<l;i++){
+			arr.push(box.children[i].value);
+		}
+		console.log(arr);
+		this.disabled="disabled";
+		bubble(arr);
+		this.disabled='';
+		console.log(arr);
+	};
+	
 </script>
 </html>
