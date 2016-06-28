@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务十八：基础JavaScript练习（一）</title>
+	<style>
+		#box div{
+			float:left;height: 50px;line-height: 50px;background-color: #f00;color:#fff;margin:10px;padding:0 25px;text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="control">
+		<input type="text" id="input">
+		<button id='li'>左侧入</button>
+		<button id='ri'>右侧入</button>
+		<button id='lo'>左侧出</button>
+		<button id='ro'>右侧出</button>
+	</div>
+	<div id="box"></div>
+</body>
+<script>
+	var input=document.getElementById('input'),
+		li	 =document.getElementById('li'),
+		ri	 =document.getElementById('ri'),
+		lo	 =document.getElementById('lo'),
+		ro	 =document.getElementById('ro'),
+		box  =document.getElementById('box');
+	li.onclick=function(){
+		var obj=document.createElement('div');
+		obj.innerHTML=input.value;
+		box.insertBefore(obj,box.children[0]);
+	};
+	ri.onclick=function(){
+		var obj=document.createElement('div');
+		obj.innerHTML=input.value;
+		box.appendChild(obj);
+	};
+	lo.onclick=function(){
+		if(box.hasChildNodes()){
+			var first=box.firstChild,
+				v=first.innerHTML;
+			box.removeChild(first);	
+			alert(v);
+		}else{alert('没有了');}
+	};
+	ro.onclick=function(){
+		if(box.hasChildNodes()){
+			var last=box.firstChild,
+				v=last.innerHTML;
+			box.removeChild(last);
+			alert(v);
+		}else{alert('没有了');}
+	};	
+	box.onclick=function(eve){
+		var boxs=box.children;
+		for(var i in boxs){
+			if (eve.target==boxs[i]){
+				var v=boxs[i].innerHTML;
+				box.removeChild(boxs[i]);
+				alert(v);
+			}
+		}
+	};
+</script>
+</html>

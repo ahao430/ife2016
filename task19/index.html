@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务十九：基础JavaScript练习（二）</title>
+	<style>
+		#box{margin-top: 20px;display: flex;height: 100px;justify-content: flex-start;align-items: flex-end;flex-flow: row nowrap;} 
+		#box div{
+			background-color: #f00;color:#fff;width: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="control">
+		<input type="text" id="input">
+		<button id='li'>左侧入</button>
+		<button id='ri'>右侧入</button>
+		<button id='lo'>左侧出</button>
+		<button id='ro'>右侧出</button>
+		<button id='generate'>随机生成一组数</button>
+		<button id='sort'>排序</button>
+	</div>
+	<div id="box"></div>
+</body>
+<script>
+	var input=document.getElementById('input'),
+		li	 =document.getElementById('li'),
+		ri	 =document.getElementById('ri'),
+		lo	 =document.getElementById('lo'),
+		ro	 =document.getElementById('ro'),
+		sort =document.getElementById('sort'),
+		box  =document.getElementById('box');
+	input.onblur=function(){
+		if(input.value.trim().match(/^[1-9][0-9]$/)){
+			input.value=input.value.trim();
+		}else{
+			alert('请输入10-100之间的整数');
+		}
+	};
+	li.onclick=function(){
+		if(box.children.length<=60){
+			var obj=document.createElement('div');
+			obj.value=input.value;
+			obj.style.height=input.value+'px';
+			box.insertBefore(obj,box.children[0]);
+		}else{
+			alert('不能超过60个元素！');
+		}
+	};
+	ri.onclick=function(){
+		if(box.children.length<=60){
+			var obj=document.createElement('div');
+			obj.value=input.value;
+			obj.style.height=input.value+'px';
+			box.appendChild(obj);
+		}else{
+			alert('不能超过60个元素！');
+		}
+	};
+	lo.onclick=function(){
+		if(box.hasChildNodes()){
+			box.removeChild(box.firstChild);	
+		}else{alert('没有了');}
+	};
+	ro.onclick=function(){
+		if(box.hasChildNodes()){
+			box.removeChild(box.lastChild);
+		}else{alert('没有了');}
+	};	
+	box.onclick=function(eve){
+		var boxs=box.children;
+		for(var i in boxs){
+			if (eve.target==boxs[i]){
+				box.removeChild(boxs[i]);
+			}
+		}
+	};
+	/*生成随机数*/
+	generate.onclick=function generateNum(){
+		for(var i=0;i<60;i++){
+			if(box.children.length<=60){
+				var obj=document.createElement('div');
+				var num=Math.floor(Math.random()*90)+10;
+				obj.value=num;
+				obj.style.height=num+'px';
+				box.appendChild(obj);
+			}else{
+				box.innerHTML="";
+				i=0;
+				generateNum;
+			}
+		}
+	};
+		
+	/*排序*/
+	sort.onclick=function(){
+
+	}
+</script>
+</html>
