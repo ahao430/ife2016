@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务十八：基础JavaScript练习（一）</title>
+	<style>
+	.control{float: left;}
+		#input{width: 250px;height: 150px;}
+	.control p{width: 250px;}
+	#box {min-height: 150px;padding-left: 260px;}
+		#box div{
+			float:left;height: 30px;line-height: 30px;background-color: #f00;color:#fff;margin:5px;padding:0 15px;text-align: center;
+		}
+	.select{color:#00f;}
+	</style>
+</head>
+<body>
+	<div class="control">
+		<textarea name="" id="input" cols="30" rows="10"></textarea>
+		<p><input type="text" id="search-text"><button id='search'>查询</button></p>
+		<p><button id='li'>左侧入</button><button id='ri'>右侧入</button></p>
+		<p><button id='lo'>左侧出</button><button id='ro'>右侧出</button></p>
+		<p>任务描述</p>
+		<p>基于任务18进行升级</p>
+		<p>将新元素输入框从input改为textarea。允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识</p>
+	</div>
+	<div id="box"></div>
+	
+	
+</body>
+<script>
+	var input=document.getElementById('input'),
+		li	 =document.getElementById('li'),
+		searchtext=document.getElementById('search-text'),
+		searchbtn	 =document.getElementById('search'),
+		ri	 =document.getElementById('ri'),
+		lo	 =document.getElementById('lo'),
+		ro	 =document.getElementById('ro'),
+		box  =document.getElementById('box');
+		var arr=[];
+		var temp;
+	li.onclick=function(){
+		arr=input.value.trim().split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/);
+		for(i in arr){
+			var obj=document.createElement('div');
+			obj.innerHTML=arr[i];
+			box.insertBefore(obj,box.children[0]);
+		}
+		temp=box.innerHTML;
+	};
+	ri.onclick=function(){
+		arr=input.value.trim().split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/);
+		for(i in arr){
+			var obj=document.createElement('div');
+			obj.innerHTML=arr[i];
+			box.appendChild(obj);
+		}
+		temp=box.innerHTML;
+	};
+	searchbtn.onclick=function(){
+		box.innerHTML=box.innerHTML.replace(new RegExp('</?span[^>]*>','g'),"");
+		var str=searchtext.value.trim();
+		if(str!=""){
+			box.innerHTML=box.innerHTML.replace(new RegExp(str,'g'),"<span class='select'>" + str + "</span>");
+		}
+	};
+	lo.onclick=function(){
+		if(box.hasChildNodes()){
+			var first=box.firstChild,
+				v=first.innerHTML;
+			box.removeChild(first);	
+			alert(v);
+		}else{alert('没有了');}
+		temp=box.innerHTML;
+	};
+	ro.onclick=function(){
+		if(box.hasChildNodes()){
+			var last=box.firstChild,
+				v=last.innerHTML;
+			box.removeChild(last);
+			alert(v);
+		}else{alert('没有了');}
+		temp=box.innerHTML;
+	};	
+	box.onclick=function(eve){
+		var boxs=box.children;
+		for(var i in boxs){
+			if (eve.target==boxs[i]){
+				var v=boxs[i].innerHTML;
+				box.removeChild(boxs[i]);
+				alert(v);
+			}
+		}
+		temp=box.innerHTML;
+	};
+</script>
+</html>
