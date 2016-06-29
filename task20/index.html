@@ -61,8 +61,14 @@
 		box.innerHTML=box.innerHTML.replace(new RegExp('</?span[^>]*>','g'),"");
 		var str=searchtext.value.trim();
 		if(str!=""){
-			box.innerHTML=box.innerHTML.replace(new RegExp(str,'g'),"<span class='select'>" + str + "</span>");
+			for(var i in box.children){
+				if(new RegExp(str,'g').test(box.children[i].innerHTML)){
+					box.children[i].innerHTML=box.children[i].innerHTML.replace(new RegExp(str,'g'),"<span class='select'>" + str + "</span>");
+				}
+				
+			}
 		}
+		
 	};
 	lo.onclick=function(){
 		if(box.hasChildNodes()){
