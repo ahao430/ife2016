@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务二十一：基础JavaScript练习（四）</title>
+	<style>
+		#tags div{float: left;background-color: #89c8fc;color:#fff;padding: 0 5px;margin:5px}
+		#hobbys div{float: left;background-color: #ffc988;color:#fff;padding: 0 5px;margin:5px}
+		#tags,#hobbys{overflow: hidden;}
+		#tags div:hover,#hobbys div:hover{background-color:#f00;cursor:pointer;}
+	</style>
+</head>
+<body>
+<div id="tag">
+	<label for="input-tag">Tag:</label>
+	<input type="text" id="input-tag">
+	<div id="tags"></div>
+</div>
+<div id="hobby">
+	<textarea name="" id="input-hobby" cols="30" rows="10"></textarea><br/>
+	<button id="btn">确认兴趣爱好</button><br/>
+	<div id="hobbys"></div>
+</div>
+<script>
+	function $(a){return document.querySelector(a);}
+	var tag=$('#tag'),
+		intag=$('#input-tag'),
+		tags=$('#tags'),
+		hobby=$('#hobby'),
+		inhobby=$('#input-hobby'),
+		hobbys=$('#hobbys');
+	function addTag(value){
+		if(value=="") {return false;}
+		var boxs=tags.querySelectorAll('div');
+		for(var i in boxs){
+			if(boxs[i].innerHTML==value){
+				return false;
+			}	
+		}
+		if(boxs.length==10){
+				tags.removeChild(boxs[0]);
+		}
+		var box=document.createElement('div');
+		box.innerHTML=value;
+		tags.appendChild(box);
+	}
+	intag.addEventListener('keyup',function(e){
+		if(e.keyCode==13||/(,| |\，)$/.test(this.value) ){
+			addTag(this.value.match(/(^[^,\， ]*)/)[0].trim());
+			this.value="";
+		}
+	});
+	btn.onclick=function(){
+		var arr=inhobby.value.trim().split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/);
+		for(var i in arr){
+			var boxs=hobbys.querySelectorAll('div');
+			var temp=arr[i];
+			var flag=false;
+			if(temp=="") continue;
+			for(var j in boxs){
+				if(boxs[j].innerHTML==temp)
+				{flag=true;break;}
+			}
+			if(flag==true) {continue;}
+			var box=document.createElement('div');
+			box.innerHTML=temp;
+			if(boxs.length==10){
+				hobbys.removeChild(boxs[0]);
+			}
+			hobbys.appendChild(box);
+		}	
+		inhobby.value="";
+	};
+	var hovertemp;
+	tags.addEventListener("click",function(e){tags.removeChild(e.target);})
+	tags.addEventListener("mouseover",function(e){if(e.target.parentNode==tags){temp=e.target.innerHTML;e.target.innerHTML="点击删除"+temp;}})
+	tags.addEventListener("mouseout",function(e){if(e.target.parentNode==tags){e.target.innerHTML=temp;}})
+	hobbys.addEventListener("click",function(e){hobbys.removeChild(e.target);})
+	hobbys.addEventListener("mouseover",function(e){if(e.target.parentNode==hobbys){temp=e.target.innerHTML;e.target.innerHTML="点击删除"+temp;}})
+	hobbys.addEventListener("mouseout",function(e){if(e.target.parentNode==hobbys){e.target.innerHTML=temp;}})
+
+</script>
+</body>
+</html>
